@@ -37,12 +37,12 @@ export default class Counter extends Component { // (2)
         if (currentCount > 3) {
             this.setState({
                 count: 0,
-                result: ""
+                result: currentResult
             })
         } else
             this.setState({
                 count: currentCount,
-                result: currentResult
+                result: ""
             })
 
     }

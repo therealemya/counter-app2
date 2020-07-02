@@ -2,6 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Counter from './Counter';
 
+describe('Tests for our app', () =>{
+    it('knows that 2 and 2 make 4', () =>{
+        expect(2 + 2).toEqual(4);
+    })
+})
+
 describe('Counter component', () => {
     it('increments count by 1 when the increment button is clicked', () => {
         const wrapper=shallow(<Counter/>);
@@ -15,11 +21,11 @@ describe('Counter component', () => {
     });
 
     describe('Counter component', () => {
-    it('decrement decreases by 1 when the decrement button is clicked', () => {
+    it('decrement reaches 0', () => {
         const wrapper=shallow(<Counter/>);
         const decrementBtn = wrapper.find('button.decrement');
         decrementBtn.simulate('click');
-        const text = wrapper.find('h3').text();
-        expect(text).toEqual('');   
+        const text = wrapper.find('h2').text();
+        expect(text).toEqual('0');   
        });    
     });
