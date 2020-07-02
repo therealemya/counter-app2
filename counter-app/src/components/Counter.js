@@ -9,6 +9,16 @@ export default class Counter extends Component { // (2)
         }
     }
 
+    decrement = (x) => {
+        return x -= 1;
+    }
+
+    decrementResult = (x) => {
+        if (x <= 0) {
+            return "Cannot Be Decreased Any Further";
+        } else
+            return "";
+    }
 
     increment = (x) => {
         return x += 1
@@ -34,9 +44,28 @@ export default class Counter extends Component { // (2)
                 count: currentCount,
                 result: currentResult
             })
-            
+
     }
 
+
+
+    
+
+    decreClick = () => {
+        const currentCount = this.decrement(this.state.count);
+        const currentResult = this.decrementResult(currentCount);
+        if (currentCount < 0) {
+            this.setState({
+                count: 0,
+                result: ""
+            })
+        } else
+            this.setState({
+                count: currentCount,
+                result: currentResult
+            })
+
+    }
 
     render() { // (4)
         const currCount = this.state.count;
@@ -45,7 +74,8 @@ export default class Counter extends Component { // (2)
             <div className="counter">
                 <h2 className="current-count">{currCount}</h2>
                 <h3 className="result" style={{ color: "red" }}>{result}</h3>
-                <button className="increment"onClick={this.handleClick}>Increase</button>
+                <button className="increment" onClick={this.handleClick}>Increase</button>
+                <button className="decrement" onClick={this.decreClick}>Decrease</button>
             </div>
         )
     }

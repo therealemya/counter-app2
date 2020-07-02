@@ -11,3 +11,13 @@ describe('Counter component', () => {
         expect(text).toEqual('1');   
        });    
     });
+
+    describe('Counter component', () => {
+    it('decrement decreases by 1 when the decrement button is clicked', () => {
+        const wrapper=shallow(<Counter/>);
+        const decrementBtn = wrapper.find('button.decrement');
+        decrementBtn.simulate('click');
+        const text = wrapper.find('h3').text();
+        expect(text).toEqual('');   
+       });    
+    });
