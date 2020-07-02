@@ -16,8 +16,8 @@ export default class Counter extends Component { // (2)
     decrementResult = (x) => {
         if (x <= 0) {
             return "Cannot Be Decreased Any Further";
-        } else
-            return "";
+        } else 
+        return "";
     }
 
     increment = (x) => {

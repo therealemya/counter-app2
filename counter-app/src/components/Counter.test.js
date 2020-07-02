@@ -7,8 +7,10 @@ describe('Counter component', () => {
         const wrapper=shallow(<Counter/>);
         const incrementBtn = wrapper.find('button.increment');
         incrementBtn.simulate('click');
+        incrementBtn.simulate('click');
+        incrementBtn.simulate('click');
         const text = wrapper.find('h2').text();
-        expect(text).toEqual('1');   
+        expect(text).toEqual('3');   
        });    
     });
 
