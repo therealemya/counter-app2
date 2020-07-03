@@ -7,11 +7,11 @@ describe('Footer component', () => {
         const wrapper = shallow(<Footer />);
         const text = wrapper.find('h3');
         expect(text).toHaveLength(1);
-    });
-});
+    })
 
-describe('Tests for our app', () =>{
-    it('knows that 2 and 2 make 4', () =>{
-        expect(2 + 2).toEqual(4);
+    it('check if footer message is visible', () => {
+        const wrapper = shallow(<Footer />);
+        const text = wrapper.find('h3').text();
+        expect(text).toEqual("Did You Reach Your Limit?");
     })
 })
